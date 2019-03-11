@@ -4,7 +4,9 @@ y0= [0 10^(-5)];
 y_0= [10^(-5) 0 ];
 tspan= [-0.6 0];
 
-%Question 1
+% Using the fourth-order explicit Runge-Kutta solver RK4 to solve the Schrodinger equation on the domain [−x0, x0], where we take x0 = 0.6 nm and set E = 1 eV for now. Initial conditions Psi(-x0) = 0 and Psi'(-x0) = epsilon = 1E-5, and psi(0) is non-zero on entire domain.
+
+
 %[y,t]=RK4(@(x,y) f(x,y,1), tspan, y0);
 %plot(t,y);
 
@@ -23,7 +25,7 @@ plot(t2,y2)
 hold off;
 
 
-% Question 4:
+% In a single figure, plotting the six corresponding eigenstates, as well as the potential V (x), on the domain [−x0, x0]. Align the zero baseline of each wavefunction with its energy eigenvalue, and use the MATLAB function trapz to normalize appropriately
 
 [a, b] = RKfa(@(x,y) f(x,y,5.8896), tspan, y0);
 b1=[ flipud(b(:,1)) ; -b(:,1)]; 
